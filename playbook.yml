@@ -1,0 +1,10 @@
+--- # signal the start of a document
+
+- hosts: all
+  become: yes
+
+  tasks:
+    - import_tasks: tasks/tools.yml
+      tags: tools # ansible-playbook playbook.yml --tags "tools"
+    - import_tasks: tasks/check.yml
+      tags: check # ansible-playbook playbook.yml --tags "check"

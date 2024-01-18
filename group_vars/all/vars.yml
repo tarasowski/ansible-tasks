@@ -1,0 +1,10 @@
+# will apply to all hosts and all groups
+username: ubuntu
+packages:
+  - vim
+  - htop
+  - git
+  - curl
+  - wget
+  - unzip
+  - zip

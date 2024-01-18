@@ -1,0 +1,11 @@
+- name: Update packages # task name
+  ansible.builtin.apt: # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html#parameters 
+    update_cache: yes # module parameters
+    upgrade: yes # module parameters
+
+- name: Install Essentials
+  ansible.builtin.package: # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html#ansible-collections-ansible-builtin-package-module
+    name: "{{ packages }}"
+      #- vim
+      #- htop
+    state: latest

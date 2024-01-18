@@ -1,0 +1,17 @@
+- name: Gather package facts
+  ansible.builtin.package_facts:
+    manager: auto
+
+- name: Convert dictionary to list
+  ansible.builtin.set_fact:
+    packages_list: "{{ packages | dict2items }}"
+
+- name: Check if vim, htop, and curl are installed
+  debug:
+    var: ansible_facts.packages[item]
+  loop: "{{ packages_list  }}"
+
+#- name: Check if vim and htop are installed
+#  debug:
+#    var: ansible_facts.packages[item]
+#  loop: "{{ packages_list }}"
