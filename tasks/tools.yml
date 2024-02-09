@@ -8,4 +8,5 @@
     name: "{{ packages }}"
       - vim
       - htop
+      - git
     state: latest
