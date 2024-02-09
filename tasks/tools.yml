@@ -6,6 +6,6 @@
 - name: Install Essentials
   ansible.builtin.package: # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html#ansible-collections-ansible-builtin-package-module
     name: "{{ packages }}"
-      #- vim
-      #- htop
+      - vim
+      - htop
     state: latest
